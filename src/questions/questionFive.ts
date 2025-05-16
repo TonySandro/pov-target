@@ -1,5 +1,5 @@
 export function questionFive() {
-  const texto = "OpenAI";
+  const text = "OpenAI";
 
   function inverterString(str: string): string {
     let invertida = "";
@@ -10,5 +10,5 @@ export function questionFive() {
   }
 
   console.log("5)");
-  console.log(inverterString(texto));
+  console.log(inverterString(text));
 }

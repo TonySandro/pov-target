@@ -1,33 +1,33 @@
 import fs from "fs";
 import path from "path";
 
-type FaturamentoDiario = {
+type dailyBilling = {
   dia: number;
   valor: number;
 };
 
-export function questionThree(relativePath: string) {
-  const fullPath = path.resolve(__dirname, relativePath); // __dirname = pasta atual
+export function questionThree() {
+  const fullPath = path.resolve(__dirname, "./faturamento.json");
   const rawData = fs.readFileSync(fullPath, "utf-8");
-  const dados: FaturamentoDiario[] = JSON.parse(rawData);
+  const dados: dailyBilling[] = JSON.parse(rawData);
 
-  const diasValidos = dados.filter((d) => d.valor > 0);
+  const validDays = dados.filter((d) => d.valor > 0);
 
-  if (diasValidos.length === 0) {
+  if (validDays.length === 0) {
     throw new Error("Nenhum dia com faturamento válido encontrado.");
   }
 
-  const menor = Math.min(...diasValidos.map((d) => d.valor));
-  const maior = Math.max(...diasValidos.map((d) => d.valor));
-  const media =
-    diasValidos.reduce((soma, d) => soma + d.valor, 0) / diasValidos.length;
-  const diasAcimaMedia = diasValidos.filter((d) => d.valor > media).length;
+  const small = Math.min(...validDays.map((d) => d.valor));
+  const larger = Math.max(...validDays.map((d) => d.valor));
+  const average =
+    validDays.reduce((soma, d) => soma + d.valor, 0) / validDays.length;
+  const daysAboveAverage = validDays.filter((d) => d.valor > average).length;
 
   console.log("3) ");
   console.log({
-    menorValor: menor,
-    maiorValor: maior,
-    diasAcimaDaMedia: diasAcimaMedia,
-    mediaConsiderada: media,
+    menorValor: small,
+    maiorValor: larger,
+    diasAcimaDaMedia: daysAboveAverage,
+    mediaConsiderada: average,
   });
 }

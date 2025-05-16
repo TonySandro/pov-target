@@ -1,12 +1,12 @@
 export function questionOne() {
-  let INDICE = 13;
-  let SOMA = 0;
+  let index = 13;
+  let sum = 0;
   let K = 0;
 
-  while (K < INDICE) {
+  while (K < index) {
     K = K + 1;
-    SOMA = SOMA + K;
+    sum = sum + K;
   }
 
-  console.log(`1) SOMA = ${SOMA}`);
+  console.log(`1) SOMA = ${sum}`);
 }

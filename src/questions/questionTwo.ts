@@ -1,5 +1,5 @@
 export function questionTwo() {
-  const numero = 21;
+  const number = 21;
 
   function pertenceFibonacci(n: number): boolean {
     let a = 0,
@@ -13,8 +13,8 @@ export function questionTwo() {
   }
 
   console.log(
-    `2) ${numero} ${
-      pertenceFibonacci(numero) ? "pertence" : "não pertence"
+    `2) ${number} ${
+      pertenceFibonacci(number) ? "pertence" : "não pertence"
     } à sequência de Fibonacci.`
   );
 }

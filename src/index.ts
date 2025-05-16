@@ -8,6 +8,6 @@ import {
 
 questionOne();
 questionTwo();
-questionThree("./faturamento.json");
+questionThree();
 questionFour();
 questionFive();
