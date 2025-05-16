@@ -1,8 +1,10 @@
-import { questionFive } from "./questionFive";
-import { questionFour } from "./questionFour";
-import { questionOne } from "./questionOne";
-import { questionThree } from "./questionThree";
-import { questionTwo } from "./questionTwo";
+import {
+  questionOne,
+  questionTwo,
+  questionThree,
+  questionFour,
+  questionFive,
+} from "./questions";
 
 questionOne();
 questionTwo();
